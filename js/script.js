@@ -48,7 +48,10 @@ var quotes = [
 
 
 // Create the getRandomQuuote function and name it getRandomQuote
-
+function getRandomQuote(inputArray){
+    var randomNum = Math.floor(Math.random() * inputArray.length);
+    return inputArray[randomNum];
+}
 
 
 // Create the printQuote funtion and name it printQuote
