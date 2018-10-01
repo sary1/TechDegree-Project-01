@@ -53,6 +53,17 @@ function getRandomQuote(inputArray){
     return inputArray[randomNum];
 }
 
+// A function that creates a random color to change the background of the web page
+function randomColor(){
+    var red, green, blue;
+    var color = '';
+    color += 'rgb(';
+    red = Math.floor(Math.random() * 256);
+    green = Math.floor(Math.random() * 256);
+    blue = Math.floor(Math.random() * 256);
+    color += red + ', ' + green + ', ' + blue + ')';
+    return color;
+}
 
 // Create the printQuote funtion and name it printQuote
 function printQuote(){
@@ -77,6 +88,12 @@ function printQuote(){
     var pastQuote = document.getElementById("quote-box");
     pastQuote.innerHTML = html;
 
+    // Changing the background color
+    var changeButton = document.getElementById('loadQuote');
+    var bg = document.querySelector('body');
+    var color = randomColor();
+    bg.style.backgroundColor = color;
+    changeButton.style.backgroundColor = color;
 }
 
 
