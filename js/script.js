@@ -55,7 +55,29 @@ function getRandomQuote(inputArray){
 
 
 // Create the printQuote funtion and name it printQuote
+function printQuote(){
 
+    // Assigning the random generated quote to a variable
+    var resultQuote = getRandomQuote(quotes);
+    var html = "";
+
+    // modifying the inner HTML of the viewed quote
+    html += '<p class="quote">' + resultQuote.quote + '</p>';
+    html += '<p class="source">'+ resultQuote.source;
+
+    // Checking for the existence of a citation and a year
+    if (resultQuote.citation){
+        html += '<span class="citation">' + resultQuote.citation + '</span>';
+    }
+    if (resultQuote.year){
+        html += '<span class="citation">' + resultQuote.year + '</span>';
+    }
+    html += '</p>';
+
+    var pastQuote = document.getElementById("quote-box");
+    pastQuote.innerHTML = html;
+
+}
 
 
 // This event listener will respond to "Show another quote" button clicks
