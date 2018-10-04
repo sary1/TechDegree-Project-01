@@ -54,6 +54,7 @@ function getRandomQuote(inputArray){
 }
 
 // A function that creates a random color to change the background of the web page
+// and the button background
 function randomColor(){
     var red, green, blue;
     var color = '';
@@ -88,7 +89,7 @@ function printQuote(){
     var pastQuote = document.getElementById("quote-box");
     pastQuote.innerHTML = html;
 
-    // Changing the background color
+    // Changing the background color of the body and the button
     var changeButton = document.getElementById('loadQuote');
     var bg = document.querySelector('body');
     var color = randomColor();
@@ -97,6 +98,10 @@ function printQuote(){
 }
 
 
+// Print a new quote with a different background color every 3 seconds
+setInterval(printQuote, 3000);
+
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
