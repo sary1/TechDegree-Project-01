@@ -6,43 +6,53 @@ var quotes = [
         quote   : "Stay hungry, stay foolish.",
         source  : "Steve Jobs",
         citation: "Stanford Commencement Speech",
-        year    : "2005"
+        year    : "2005",
+        category: "Business"
     },
     {
         quote   : "It always seems impossible until it's done.",
-        source  : "Nelson Mandela"
+        source  : "Nelson Mandela",
+        category: "Motivation"
     },
     {
         quote   : "Life is 10% what happens to you and 90% how you react to it.",
-        source  : "Charles R. Swindoll"
+        source  : "Charles R. Swindoll",
+        category: "Life Style"
     },
     {
         quote   : "First they ignore you, then they laugh at you, then they fight you, then you win.",
-        source  : "Mahatma Gandhi"
+        source  : "Mahatma Gandhi",
+        category: "Motivation"
     },
     {
         quote   : "Walking with a friend in the dark is better than walking alone in the light.",
-        source  : "Helen Keller"
+        source  : "Helen Keller",
+        category: "Life Style"
     },
     {
         quote   : "Great men are not born great, they grow great.",
-        source  : "Mario Puzo"
+        source  : "Mario Puzo",
+        category: "Motivation"
     },
     {
         quote   : "Success is a lousy teacher. It seduces smart people into thinking they can't lose.",
-        source  : "Bill Gates"
+        source  : "Bill Gates",
+        category: "Business"
     },
     {
         quote   : "When something is important enough, you do it even if the odds are not in your favour.",
-        source  : "Elon Musk"
+        source  : "Elon Musk",
+        category: "Motivation"
     },
     {
         quote   : "The most dangerous phrase in the language is we've always done.",
-        source  : "Grace Hopper"
+        source  : "Grace Hopper",
+        category: "Life Style"
     },
     {
         quote   : "You only live once, but if you do it right, once is enough.",
-        source  : "Mae West"
+        source  : "Mae West",
+        category: "Motivation"
     }
 ];
 
@@ -73,6 +83,9 @@ function printQuote(){
     var resultQuote = getRandomQuote(quotes);
     var html = "";
 
+    // Adding category
+    html += '<h3 class="category"> Category:  ' + resultQuote.category + '</h3>';
+
     // modifying the inner HTML of the viewed quote
     html += '<p class="quote">' + resultQuote.quote + '</p>';
     html += '<p class="source">'+ resultQuote.source;
@@ -82,7 +95,7 @@ function printQuote(){
         html += '<span class="citation">' + resultQuote.citation + '</span>';
     }
     if (resultQuote.year){
-        html += '<span class="citation">' + resultQuote.year + '</span>';
+        html += '<span class="year">' + resultQuote.year + '</span>';
     }
     html += '</p>';
 
